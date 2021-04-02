@@ -58,7 +58,7 @@ Amazon Lookout for Equipment는 압력, 유속, RPM, 온도 및 전력량과 같
 Amazon SageMaker 콘솔로 다시 돌아간 다음 노트북 인스턴스 메뉴로 돌아갈 수 있습니다. 인스턴스를 시작하고 Jupyter 또는 JupyterLab 세션을 시작합니다. 여기서 새 터미널을 시작하고 `git clone`를 통해 본 저장소를 당신의 로컬 개발 환경으로 복제하세요.
 
 ### 저장소 구조
-이 저장소를 복제한 다음 [**데이터 준비**](notebooks/1_data_preparation.ipynb) 노트북으로 이동합시다. 이 첫 번째 노트북은 다른 노트북에 필요한 데이터를 다운로드하고 준비합니다.
+본 저장소를 복제한 다음 [**데이터 준비**](notebooks/1_data_preparation.ipynb) 노트북으로 이동합시다. 이 첫 번째 노트북은 다른 노트북에 필요한 데이터를 다운로드하여 준비합니다.
 
 ```
 .
@@ -67,7 +67,7 @@ Amazon SageMaker 콘솔로 다시 돌아간 다음 노트북 인스턴스 메뉴
 |
 +-- assets/                            <-- 노트북에서 사용되는 사진들
 |
-+-- dataset/                           <-- 원천 데이터셋 파일은 여기에 있습니다
++-- dataset/                           <-- 원천 데이터셋 파일이 여기에 있습니다
 |   |-- labels.csv                         | 알려진 이상 범위
 |   |-- tags_description.csv               | 각 신호 시계열에 대한 설명
 |   |-- timeranges.txt                     | 훈련 / 검증 분할
@@ -96,4 +96,4 @@ Amazon SageMaker 콘솔로 다시 돌아간 다음 노트북 인스턴스 메뉴
 자세한 내용은 [**기여하기**](CONTRIBUTING.md#security-issue-notifications)를 참조하세요.
 
 ## 라이선스
-MIT-0 라이선스에 따라 본 노트북 모음에 라이선스가 부여됩니다. LICENSE 파일을 참조하세요.
+MIT-0 라이선스에 의거하여 본 노트북 모음에 라이선스가 부여됩니다. LICENSE 파일을 참조하세요.
