@@ -65,35 +65,35 @@ Amazon SageMaker 콘솔로 다시 돌아간 다음 노트북 인스턴스 메뉴
 |
 +-- README.md                          <-- 본 가이드 파일
 |
-+-- assets/                            <-- 노트북에서 사용되는 그림들
++-- assets/                            <-- 노트북에서 사용되는 사진들
 |
-+-- dataset/                           <-- Raw dataset files are located here
-|   |-- labels.csv                         | Known anomaly ranges
-|   |-- tags_description.csv               | Description of each time serie signal
-|   |-- timeranges.txt                     | Train / evaluation split
-|   \-- timeseries.zip                     | Raw timeseries
++-- dataset/                           <-- 원천 데이터셋 파일은 여기에 있습니다
+|   |-- labels.csv                         | 알려진 이상 범위
+|   |-- tags_description.csv               | 각 신호 시계열에 대한 설명
+|   |-- timeranges.txt                     | 훈련 / 검증 분할
+|   \-- timeseries.zip                     | 원천 시계열
 |
 +-- notebooks/
-|   |-- 1_data_preparation.ipynb       <-- START HERE: data preparation notebook, useful to
-|   |                                      download and prepare the data, get familiar with
-|   |                                      them
+|   |-- 1_data_preparation.ipynb       <-- 여기서 시작: 데이터 다운로드와 준비에 필요한
+|   |                                      데이터 준비 노트북이므로 잘 살펴보세요
+|   |                                      
 |   |
-|   |-- 2_dataset_creation.ipynb       <-- Create a Lookout for Equipment dataset
-|   |-- 3_model_training.ipynb         <-- Train a Lookout for Equipment model
-|   |-- 4_model_evaluation.ipynb       <-- Plot the evaluation results and some diagnostics
-|   \-- 5_inference_scheduling.ipynb   <-- Schedule a regular inference execution
+|   |-- 2_dataset_creation.ipynb       <-- Lookout for Equipment 데이터셋 생성
+|   |-- 3_model_training.ipynb         <-- Lookout for Equipment 모델 훈련
+|   |-- 4_model_evaluation.ipynb       <-- 평가 결과와 일부 진단 내용을 시각화
+|   \-- 5_inference_scheduling.ipynb   <-- 정기적인 추론 작업 실행 예약
 |
 +-- utils/
-    |-- lookout_equipment_utils.py     <-- Utilities to manage Lookout for Equipment assets
-    \-- lookoutequipment.json          <-- Configuration file to access the API while the service
-                                           is in preview
+    |-- lookout_equipment_utils.py     <-- Lookout for Equipment 자산을 관리하는 유틸리티
+    \-- lookoutequipment.json          <-- 서비스가 Preview 상태인 동안 API에 접근하기 위한 구성 파일
+                                          
 ```
 
 ## 문의
-[**Michaël HOARAU**](mailto:michoara@amazon.fr)에게 연락하거나 본 저장소에 Issue를 올리세요.
+[**Michaël HOARAU**](mailto:michoara@amazon.fr)에게 연락하거나 저장소에 Issue를 올리세요.
 
 ## 보안
 자세한 내용은 [**기여하기**](CONTRIBUTING.md#security-issue-notifications)를 참조하세요.
 
 ## 라이선스
-본 노트북 모음은 MIT-0 라이선스에 따라 라이선스가 부여됩니다. LICENSE 파일을 참조하세요.
+MIT-0 라이선스에 따라 본 노트북 모음에 라이선스가 부여됩니다. LICENSE 파일을 참조하세요.
