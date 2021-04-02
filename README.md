@@ -1,10 +1,10 @@
-# Amazon Lookout for Equipment Demo
-Amazon Lookout for Equipment uses the data from your sensors to detect abnormal equipment behavior, so you can take action before machine failures occur and avoid unplanned downtime.
+# Amazon Lookout for Equipment 데모
+Amazon Lookout for Equipment는 센서 데이터를 사용하여 장비의 비정상적인 동작을 감지하므로 기계 고장이 발생하기 전에 조치를 취하고 뜻밖의 다운 타임을 방지할 수 있습니다.
 
-**Note:** *Expect around 1.5 hour to run this whole set of notebooks, including 55 minutes of training time.*
+**참고:** *모델 훈련 시간 55분을 포함하여 노트북 전체를 실행하는 데 약 1.5시간이 소요됩니다.*
 
-## Overview
-Amazon Lookout for Equipment analyzes the data from your sensors, such as pressure, flow rate, RPMs, temperature, and power to automatically train a specific ML model based on just your data, for your equipment – with no ML expertise required. Lookout for Equipment uses your unique ML model to analyze incoming sensor data in real-time and accurately identify early warning signs that could lead to machine failures. This means you can detect equipment abnormalities with speed and precision, quickly diagnose issues, take action to reduce expensive downtime, and reduce false alerts.
+## 개요
+Amazon Lookout for Equipment는 압력, 유속, RPM, 온도와 전력과 같은 센서의 데이터를 분석하여 ML 전문 지식 없이도 장비에 대한 데이터만을 기반으로 특정 ML 모델을 자동으로 훈련시킵니다. Lookout for Equipment는 고유 한 ML 모델을 사용하여 들어오는 센서 데이터를 실시간으로 분석하고 기계 고장으로 이어질 수있는 조기 경고 신호를 정확하게 식별합니다. 즉, 장비 이상을 빠르고 정확하게 감지하고, 문제를 신속하게 진단하고, 비용이 많이 드는 가동 중지 시간을 줄이기위한 조치를 취하고, 잘못된 경고를 줄일 수 있습니다.
 
 ### Installation instructions
 [**Create an AWS account**](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html) if you do not already have one. This service is actually in Preview: to run this demo, your AWS account will need to be on the allow list. To sign up for the preview, you can follow [**this link**](https://pages.awscloud.com/Amazon-Lookout-for-Equipment-Preview.html).
