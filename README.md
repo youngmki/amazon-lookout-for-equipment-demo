@@ -1,13 +1,13 @@
 # Amazon Lookout for Equipment 데모
-Amazon Lookout for Equipment는 센서 데이터를 사용하여 장비의 비정상적인 동작을 감지하므로 기계 고장이 발생하기 전에 조치를 취하고 뜻밖의 다운 타임을 방지할 수 있습니다.
+Amazon Lookout for Equipment는 센서 데이터를 사용하여 장비의 비정상적인 동작을 감지하므로 기계 고장이 발생하기 전에 조치를 취하고 뜻밖의 가동 중지 시간을 방지할 수 있습니다.
 
 **참고:** *모델 훈련 시간 55분을 포함하여 노트북 전체를 실행하는 데 약 1.5시간이 소요됩니다.*
 
 ## 개요
-Amazon Lookout for Equipment는 압력, 유속, RPM, 온도와 전력과 같은 센서의 데이터를 분석하여 ML 전문 지식 없이도 장비에 대한 데이터만을 기반으로 특정 ML 모델을 자동으로 훈련시킵니다. Lookout for Equipment는 고유 한 ML 모델을 사용하여 들어오는 센서 데이터를 실시간으로 분석하고 기계 고장으로 이어질 수있는 조기 경고 신호를 정확하게 식별합니다. 즉, 장비 이상을 빠르고 정확하게 감지하고, 문제를 신속하게 진단하고, 비용이 많이 드는 가동 중지 시간을 줄이기위한 조치를 취하고, 잘못된 경고를 줄일 수 있습니다.
+Amazon Lookout for Equipment는 압력, 유속, RPM, 온도 및 전력과 같은 센서 데이터를 분석하여 ML 전문 지식 없이 장비에 대한 데이터만을 기반으로 특정 ML 모델을 자동으로 훈련시킵니다. Lookout for Equipment는 고유한 ML 모델을 사용하여 입력되는 센서 데이터를 실시간으로 분석하고 기계 고장으로 이어질 수있는 조기 경고 신호를 정확하게 식별합니다. 즉 장비 이상을 빠르고 정확하게 감지하고, 문제를 신속하게 진단하고, 큰 비용이 드는 가동 중지 시간을 줄이기 위한 조치를 취하고, 잘못된 경고를 줄일 수 있습니다.
 
-### Installation instructions
-[**Create an AWS account**](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html) if you do not already have one. This service is actually in Preview: to run this demo, your AWS account will need to be on the allow list. To sign up for the preview, you can follow [**this link**](https://pages.awscloud.com/Amazon-Lookout-for-Equipment-Preview.html).
+### 설치 지침
+아직 계정이 없다면 [**AWS 계정을 먼저 생성해야합니다.**](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html) 현재 본 서비스는 Preview로 제공되고 있습니다. 그러므로 데모를 실행하려면 AWS 계정이 허용 목록에 포함되어야 합니다. This service is actually in Preview: to run this demo, your AWS account will need to be on the allow list. Preview를 신청하려면 [**이 링크를 클릭하세요**](https://pages.awscloud.com/Amazon-Lookout-for-Equipment-Preview.html).
 
 Once you have access to the service, login to your AWS account and navigate to the SageMaker console and create a new instance. Using an **ml.m5.xlarge instance** with the standard 5 GB attached EBS volume is recommended to process and visualize the dataset comfortably. To enable exploration of big timeseries dataset, you might need to increase the EBS volume size. Some plots can take up a significant amount of memory: in such exploration, it's not unusual to move to bigger memory optimized instance (like the **ml.m5.4xlarge** one).
 
