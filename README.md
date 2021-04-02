@@ -4,14 +4,14 @@ Amazon Lookout for Equipment는 센서 데이터를 사용하여 장비의 비�
 **참고:** *모델 훈련 시간 55분을 포함하여 노트북 전체를 실행하는 데 약 1.5시간이 소요됩니다.*
 
 ## 개요
-Amazon Lookout for Equipment는 압력, 유속, RPM, 온도 및 전력량과 같은 센서 데이터를 분석하여 ML에 대한 전문 지식 필요 없이 장비 데이터만 가지고 특정 ML 모델을 자동으로 훈련시킵니다. Lookout for Equipment는 생성한 ML 모델을 사용하여 입력되는 센서 데이터를 실시간으로 분석하고 기계 고장으로 이어질 수있는 조기 경고 신호를 정확하게 식별합니다. 즉 장비 이상을 빠르고 정확하게 감지하고, 문제를 신속하게 진단하고, 큰 비용이 드는 가동 중지 시간을 줄이기 위한 조치를 취하고, 잘못된 경고를 줄일 수 있습니다.
+Amazon Lookout for Equipment는 압력, 유속, RPM, 온도 및 전력량과 같은 센서 데이터를 분석하여 ML에 대한 전문 지식 필요 없이 장비 데이터만 가지고 특정 ML 모델을 자동으로 훈련시킵니다. Lookout for Equipment는 생성한 ML 모델을 사용하여 입력되는 센서 데이터를 실시간으로 분석하고 기계 고장으로 이어질 수 있는 조기 경고 신호를 정확하게 식별합니다. 즉 장비 이상을 빠르고 정확하게 감지하고, 문제를 신속하게 진단하고, 큰 비용이 드는 가동 중지 시간을 줄이기 위한 조치를 취하고, 잘못된 경고를 줄일 수 있습니다.
 
 ### 설치 가이드
 아직 계정이 없다면 [**AWS 계정을 먼저 생성해야 합니다.**](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html) 현재 해당 서비스는 Preview로 제공되고 있습니다. 그러므로 데모를 실행하려면 AWS 계정이 허용 목록에 포함되어야 합니다. Preview를 신청하려면 [**이 링크**](https://pages.awscloud.com/Amazon-Lookout-for-Equipment-Preview.html)를 따라가세요.
 
-서비스에 대한 접근 권한이 있으면 AWS 계정에 접속한 후 SageMaker 콘솔로 이동하여 새 인스턴스를 생성합니다. 데이터셋을 안정적으로 처리하고 시각화하려면 5GB EBS 볼륨표준이 연결된 **ml.m5.xlarge 인스턴스**를 사용하는 것이 좋습니다. 대용량 시계열 데이터셋을 탐색하려면 EBS 볼륨 크기를 증가시켜야 할 수 있습니다. 일부 플롯은 상당한 크기의 메모리를 요구합니다. 탐색 과정 도중에 더 큰 메모리의 최적화 인스턴스(예: **ml.m5.4xlarge**)로 변경하여 진행하기도 합니다.
+서비스에 대한 접근 권한이 있으면 AWS 계정에 접속한 후 SageMaker 콘솔로 이동하여 새 인스턴스를 생성합니다. 데이터셋을 안정적으로 처리하고 시각화하려면 5GB EBS 볼륨 표준이 연결된 **ml.m5.xlarge 인스턴스**를 사용하는 것이 좋습니다. 대용량 시계열 데이터셋을 탐색하려면 EBS 볼륨 크기를 증가시켜야 할 수 있습니다. 일부 플롯은 상당한 크기의 메모리를 요구합니다. 탐색 과정 도중에 더 큰 메모리의 최적화 인스턴스(예: **ml.m5.4xlarge**) 로 변경하여 진행하기도 합니다.
 
-본인의 노트북 인스턴스에 Amazon Lookout for Equipment API를 호출 할 수 있는 **IAM 역할**이 있는지 확인해야 합니다.
+본인의 노트북 인스턴스에 Amazon Lookout for Equipment API를 호출할 수 있는 **IAM 역할**이 있는지 확인해야 합니다.
 
 1. 노트북 인스턴스가 양도할 SageMaker 실행 역할을 **IAM 콘솔**에서 찾아보세요. (`AmazonSageMaker-ExecutionRole-yyyymmddTHHMMSS`과 같은 이름을 가진 역할)
 2. `Permissions` 탭에서 `Add inline policy`을 클릭한 후 `JSON`을 선택하고 다음과 같은 정책을 입력합니다.
@@ -53,7 +53,7 @@ Amazon Lookout for Equipment는 압력, 유속, RPM, 온도 및 전력량과 같
   ]
 }
 ```
-5. `Update the Trust Policy` 버튼을 클릭하세요. SageMaker 노트북 인스턴스는 이제 Lookout for Equipment API를 호출할 수 있으며 서비스는 데이터가 있는 S3 버킷에 대해 적절한 접근 권한을 갖게됩니다. 
+5. `Update the Trust Policy` 버튼을 클릭하세요. SageMaker 노트북 인스턴스는 이제 Lookout for Equipment API를 호출할 수 있으며 서비스는 데이터가 있는 S3 버킷에 대해 적절한 접근 권한을 갖게 됩니다. 
 
 Amazon SageMaker 콘솔로 다시 돌아간 다음 노트북 인스턴스 메뉴로 이동합니다. 인스턴스를 시작하고 Jupyter 또는 JupyterLab 세션을 시작합니다. 새 터미널을 시작한 다음 `git clone`를 이용하여 본 저장소를 로컬 개발 서버로 복제합니다.
 
