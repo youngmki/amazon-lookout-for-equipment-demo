@@ -81,7 +81,7 @@ Amazon SageMaker 콘솔로 다시 돌아간 다음 노트북 인스턴스 메뉴
 |   |-- 2_dataset_creation.ipynb       <-- Lookout for Equipment 데이터셋 생성
 |   |-- 3_model_training.ipynb         <-- Lookout for Equipment 모델 훈련
 |   |-- 4_model_evaluation.ipynb       <-- 평가 결과와 일부 진단 내용을 시각화
-|   \-- 5_inference_scheduling.ipynb   <-- 정기적인 추론 작업 실행 예약
+|   \-- 5_inference_scheduling.ipynb   <-- 정기적으로 추론 작업 실행 스케줄링
 |
 +-- utils/
     |-- lookout_equipment_utils.py     <-- Lookout for Equipment 자산을 관리하는 유틸리티
