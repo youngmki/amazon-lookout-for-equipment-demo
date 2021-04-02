@@ -9,11 +9,11 @@ Amazon Lookout for Equipment는 압력, 유속, RPM, 온도 및 전력량과 같
 ### 설치 가이드
 아직 계정이 없다면 [**AWS 계정을 먼저 생성해야 합니다.**](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html) 현재 해당 서비스는 Preview로 제공되고 있습니다. 그러므로 데모를 실행하려면 Preview를 신청하여 AWS 계정이 허용 목록에 포함되어야 합니다. Preview를 신청하려면 [**이 링크**](https://pages.awscloud.com/Amazon-Lookout-for-Equipment-Preview.html)를 따라가세요.
 
-서비스에 대한 접근 권한이 있다면 AWS 계정에 접속한 다음 SageMaker 콘솔로 이동하여 새 인스턴스를 생성합니다. 데이터셋을 안정적으로 처리하고 시각화하려면 5GB EBS 볼륨 표준이 연결된 **ml.m5.xlarge 인스턴스**를 사용하는 것을 권장합니다. 대규모 시계열 데이터셋을 탐색하려면 EBS 볼륨 크기를 증가시켜야 할 수 있습니다. 일부 플롯은 상당한 크기의 메모리를 요구합니다. 탐색 과정 도중에 더 큰 메모리의 최적화 인스턴스(예: **ml.m5.4xlarge**) 로 변경하여 진행하기도 합니다.
+서비스에 대한 접근 권한이 있다면 AWS 계정에 접속한 다음 SageMaker 콘솔로 이동하여 새 인스턴스를 생성합니다. 데이터셋을 안정적으로 처리하고 시각화하려면 5GB EBS 볼륨 표준이 연결된 **ml.m5.xlarge 인스턴스**를 사용하는 것을 권장합니다. 대규모 시계열 데이터셋을 탐색하려면 EBS 볼륨을 키워야 할 수도 있습니다. 일부 플롯은 상당한 크기의 메모리를 요구합니다. 탐색 과정 도중 더 큰 메모리의 최적화 인스턴스(예: **ml.m5.4xlarge**) 로 바꾸어 진행하기도 합니다.
 
-본인의 노트북 인스턴스에 Amazon Lookout for Equipment API를 호출할 수 있는 **IAM 역할**이 있는지 확인해야 합니다.
+자신의 노트북 인스턴스에 Amazon Lookout for Equipment API를 호출할 수 있는 **IAM 역할**이 있는지 확인해야 합니다.
 
-1. 노트북 인스턴스가 양도할 SageMaker 실행 역할을 **IAM 콘솔**에서 찾아보세요. (`AmazonSageMaker-ExecutionRole-yyyymmddTHHMMSS`과 같은 이름을 가진 역할)
+1. 노트북 인스턴스가 위임할 SageMaker 실행 역할을 **IAM 콘솔**에서 찾아보세요. (`AmazonSageMaker-ExecutionRole-yyyymmddTHHMMSS` 같은 이름을 가진 역할)
 2. `Permissions` 탭에서 `Add inline policy`을 클릭한 후 `JSON`을 선택하고 다음과 같은 정책을 입력합니다.
 
 ```json
@@ -34,7 +34,7 @@ Amazon Lookout for Equipment는 압력, 유속, RPM, 온도 및 전력량과 같
 }
 ```
 3. `Review policy` 버튼을 클릭하고 `Create policy` 버튼을 클릭하기 전에 이름을 지정하세요. (예: **LookoutEquipmentAccess**)
-4. 해당 역할의 `Trust relationship` 탭으로 이동하여 `Edit trust relationship` 버튼을 클릭하고 다음과 같은 정책을 입력하세요. 해당 역할에 대해 이미 신뢰 관계가 있는 경우 서비스 목록에 **"lookoutequipment.amazonaws.com"**을 추가하기만 하면 됩니다.
+4. 해당 역할의 `Trust relationship` 탭으로 이동하여 `Edit trust relationship` 버튼을 클릭하고 다음과 같은 정책을 입력하세요. 해당 역할에 대해 이미 신뢰 관계가 있는 경우 서비스 목록에 **\"lookoutequipment.amazonaws.com\"**을 추가하기만 하면 됩니다.
 
 ```json
 {
