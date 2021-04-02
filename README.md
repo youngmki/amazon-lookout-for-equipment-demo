@@ -34,7 +34,7 @@ Amazon Lookout for Equipment는 압력, 유속, RPM, 온도 및 전력량과 같
 }
 ```
 3. `Review policy` 버튼을 클릭하고 `Create policy` 버튼을 클릭하기 전에 이름을 지정하세요. (예: **LookoutEquipmentAccess**)
-4. 해당 역할의 `Trust relationship` 탭으로 이동하여 `Edit trust relationship` 버튼을 클릭하고 다음과 같은 정책을 입력하세요. 해당 역할에 대해 이미 신뢰 관계가 있는 경우 서비스 목록에 **\\"lookoutequipment.amazonaws.com\\"**을 추가하기만 하면 됩니다.
+4. 해당 역할의 `Trust relationship` 탭으로 이동하여 `Edit trust relationship` 버튼을 클릭하고 다음과 같은 정책을 입력하세요. 해당 역할에 대해 이미 신뢰 관계가 있는 경우 서비스 목록에 **"lookoutequipment.amazonaws.com"**\을 추가하기만 하면 됩니다.
 
 ```json
 {
