@@ -1359,7 +1359,9 @@ class LookoutEquipmentScheduler:
         # Assembles them into a DataFrame:
         results_df = pd.concat(results_df, axis='index')
         results_df.columns = ['Timestamp', 'Predictions']
-        results_df['Timestamp'] = pd.to_datetime(results_df['Timestamp'])
+        # results_df['Timestamp'] = pd.to_datetime(results_df['Timestamp'])
+        results_df['Timestamp'] = pd.to_datetime(results_df['Timestamp'].map(lambda x: eval(x + '}')['timestamp'])) # Debugged
+        results_df['Predictions'] = results_df['Predictions'].map(lambda x: eval('{' + x)['prediction']) # Debugged
         results_df = results_df.set_index('Timestamp')
         
         return results_df
